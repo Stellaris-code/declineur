@@ -1,0 +1,4 @@
+declineur
+=========
+
+Déclineur lain automatique
