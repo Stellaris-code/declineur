@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">var jsloaded=false; var cssloaded=false;</script>
+    <link rel="stylesheet" onload="cssloaded=true;" type="text/css" href="css/style.css">
+    <title>Le déclineur</title>
+
+	<script type="text/javascript" onload="jsloaded=true;" src="js/declination.js"></script>
+
+  <script>function hideShowCB()
+  {
+if (document.getElementById("latinW").value.split(",").length > 1
+   && document.getElementById("latinW").value.split(",")[1].length >= 2
+   && document.getElementById("latinW").value.split(",")[1].trim().toLowerCase().substr(-2) == "is")
+{
+  console.log("Keypress;");
+  document.getElementById("list3").style.display = "inline";
+}
+else
+{
+  document.getElementById("list3").style.display = "none";
+}
+  }
+  </script>
+
+  <!--[if !IE]>
+	<script type="text/javascript">
+		if (!jsloaded && !cssloaded)
+			alert("Les fichiers 'js/declination.js' et 'css/style.css' n'ont pas pu être trouvés !\n Le déclineur ne pourra pas fonctionner !");
+		else if (!jsloaded)
+			alert("Le fichier 'js/declination.js' n'a pas pu être trouvé ! Le déclineur ne pourra pas fonctionner !");
+		else if (!cssloaded)
+			alert("Le fichier 'css/style.css' n'a pas pu être trouvé ! Le déclineur pourra tout de même fonctionner.");
+	</script>
+  <![endif]-->
+
+	</head>
+	<body>
+	<header>
+	<div id="title">Le déclineur</div>
+	</header>
+	<noscript>Erreur : le javascript doit être activé pour que le déclineur fonctionne !</noscript>
+	<div class="declinator" align="center">
+	<div class="pure-form">
+	<input id="latinW" type="text" onkeypress="if (event.keyCode == '13') decline(); /* Press Enter */" oninput="hideShowCB();" placeholder="ex: rosa, ae"/>
+  <select name="list3" id="list3" style="display: none;">
+    <option>Parisyllabique</option>
+    <option>Imparisyllabique</option>
+  </select>
+	<button id="declineButton" type="button" onclick="decline();" class="pure-button pure-button-primary">Décliner</button>
+	</div>
+	<div id="hor-minimalist-a" style="margin-right: 130px;">
+	<table>
+	<tr>
+	<th></th>
+	<th>Singulier</th>
+	<th>Pluriel</th>
+	</tr>
+	<tr>
+	<td>Nominatif</td>
+	<td id="s_nominative"></td>
+	<td id="p_nominative"></td>
+	</tr>
+	<tr>
+	<td>Vocatif</td>
+	<td id="s_vocative"></td>
+	<td id="p_vocative"></td>
+	</tr>
+	<tr>
+	<td>Accusatif</td>
+	<td id="s_accusative"></td>
+	<td id="p_accusative"></td>
+	</tr>
+	<tr>
+	<td>Génitif</td>
+	<td id="s_genitive"></td>
+	<td id="p_genitive"></td>
+	</tr>
+	<tr>
+	<td>Datif</td>
+	<td id="s_dative"></td>
+	<td id="p_dative"></td>
+	</tr>
+	<tr>
+	<td>Ablatif</td>
+	<td id="s_ablative"></td>
+	<td id="p_ablative"></td>
+	</tr>
+	</table>
+	</div>
+	</div>
+	<footer>
+	<p style="text-align: center;">Yann Boucher - 4ème Aragon</p>
+	</footer>
+	</body>
+	</html>
