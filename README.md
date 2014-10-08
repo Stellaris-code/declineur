@@ -1,4 +1,4 @@
 declineur
 =========
 
-Déclineur lain automatique
+Déclineur latin automatique
