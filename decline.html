@@ -26,7 +26,7 @@ else
   }
   </script>
 
-  <!--[if !IE]>
+  <!--[if gt IE 8]>
 	<script type="text/javascript">
 		if (!jsloaded && !cssloaded)
 			alert("Les fichiers 'js/declination.js' et 'css/style.css' n'ont pas pu être trouvés !\n Le déclineur ne pourra pas fonctionner !");
@@ -36,13 +36,15 @@ else
 			alert("Le fichier 'css/style.css' n'a pas pu être trouvé ! Le déclineur pourra tout de même fonctionner.");
 	</script>
   <![endif]-->
-
 	</head>
 	<body>
 	<header>
 	<div id="title">Le déclineur</div>
 	</header>
 	<noscript>Erreur : le javascript doit être activé pour que le déclineur fonctionne !</noscript>
+	<!--[if lte IE 8]>
+	<p>Attention, le déclineur ne peut fonctionner correctement que sous Internet Explorer 9 et supérieur !</p>
+	<![endif]-->
 	<div class="declinator" align="center">
 	<div class="pure-form">
 	<input id="latinW" type="text" onkeypress="if (event.keyCode == '13') decline(); /* Press Enter */" oninput="hideShowCB();" placeholder="ex: rosa, ae"/>
