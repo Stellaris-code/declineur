@@ -348,12 +348,15 @@ function decline() {
                 if (document.getElementById("latinW").value.split(",")[2] == null) {
                     alert("Le genre doit être indiqué pour la 3ème déclinaison !");
                 }
+		else
+		{
                 var gender = document.getElementById("latinW").value.split(",")[2].trim().toLowerCase();
                 if (gender != "m" && gender != "n" && gender != "f") {
                     alert("Le genre doit être sous la forme de 'n','m' ou 'f' !");
                 }
                 declination3(word, document.getElementById("latinW").value.split(",")[1].trim().toLowerCase(),
                     gender);
+		}
             } else {
                 alert("Décliaison non reconnue !");
             }
